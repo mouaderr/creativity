@@ -1,0 +1,333 @@
+/* تنسيق الجسم */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    text-align: right;
+    background-color: #070707;
+    color: #fff;
+    font-size: 14px; /* حجم النص الأساسي */
+}
+
+/* تنسيق الشعار */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111;
+    color: #e9e7e7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #e9e7e7;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e67e22;
+}
+
+/* العرض الشرائحي */
+.slideshow-container {
+    max-width: 800px; /* تحديد عرض أقصى */
+    margin: auto; /* جعلها في المنتصف */
+    position: relative;
+}
+
+.slideshow-container img {
+    width: 100%; /* جعل الصورة تمتد بالكامل */
+    max-height: 400px; /* تقليل الارتفاع */
+    object-fit: cover; /* اقتصاص الصورة حسب الحاوية */
+    border-radius: 8px; /* إضافة زوايا دائرية */
+}
+
+.mySlides {
+    display: none;
+}
+
+/* قسم المنتجات */
+.products-section {
+    padding: 20px 10px;
+    background: linear-gradient(45deg, #1c1c1c, #444);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    margin: 10px auto;
+    max-width: 1000px;
+}
+
+.products-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #e67e22;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px; /* فجوة بين المنتجات */
+}
+
+.product {
+    flex: 1 0 30%; /* تقليل حجم المنتج */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    padding: 15px;
+    background: #fff;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.product img {
+    max-height: 150px; /* ضبط ارتفاع الصورة */
+    width: auto;
+    border-radius: 8px;
+    object-fit: cover; /* اقتصاص الصورة حسب الحاجة */
+}
+
+.product h3 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.product .price {
+    color: #e67e22;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+button.buy-button {
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button.buy-button:hover {
+    background-color: #d35400;
+}
+
+/* قسم الدفع */
+#payment-methods {
+    display: none;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.payment-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+    background-color: #2980b9;
+}
+
+/* الفوتر */
+footer {
+    background: #111;
+    color: #e9e7e7;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+
+/* تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: 1fr; /* منتج واحد لكل صف */
+    }
+
+    .product img {
+        max-height: 120px; /* تصغير الصور */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header {
+        padding: 10px; /* تقليل حشو العنوان */
+    }
+
+    #payment-methods {
+        max-width: 90%; /* توسيع قسم الدفع للشاشات الصغيرة */
+    }
+}
+ /* تنسيق الصندوق */
+        /* تنسيق الصندوق */
+        .modal {
+            display: none; /* إخفاء الصندوق افتراضيًا */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8); /* خلفية معتمة */
+        }
+
+        .modal-content {
+            background-color: #222;
+            color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #555;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: #e67e22;
+        }
+
+        .modal-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-content ul li {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content ul li a {
+            text-decoration: none;
+            color: #e67e22;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-content ul li a:hover {
+            color: #d35400;
+        }
+
+        .modal-content ul li a i {
+            font-size: 20px;
+            color: #e67e22;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+        }
+        @media (max-width: 480px) {
+            /* عند الشاشات الأصغر مثل الهواتف */
+            header nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-section {
+                width: 100%;
+            }
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        .product {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
